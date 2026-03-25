@@ -1,0 +1,29 @@
+{
+  "show_name": "Sunday Service",
+  "channels": [
+    {"type": "input", "number": 1, "name": "Kick"},
+    {"type": "input", "number": 2, "name": "Snare"},
+    {"type": "input", "number": 3, "name": "HiHat"},
+    {"type": "input", "number": 4, "name": "Tom1"},
+    {"type": "input", "number": 5, "name": "Tom2"},
+    {"type": "input", "number": 6, "name": "OH L"},
+    {"type": "input", "number": 7, "name": "OH R"},
+    {"type": "input", "number": 8, "name": "Bass DI"},
+    {"type": "input", "number": 9, "name": "E.Gtr"},
+    {"type": "input", "number": 10, "name": "A.Gtr"},
+    {"type": "input", "number": 11, "name": "Keys L"},
+    {"type": "input", "number": 12, "name": "Keys R"},
+    {"type": "input", "number": 13, "name": "Vox Lead"},
+    {"type": "input", "number": 14, "name": "Vox BV1"},
+    {"type": "input", "number": 15, "name": "Vox BV2"},
+    {"type": "mix", "number": 1, "name": "Mon Drums"},
+    {"type": "mix", "number": 2, "name": "Mon Bass"},
+    {"type": "mix", "number": 3, "name": "Mon Gtr"},
+    {"type": "mix", "number": 4, "name": "Mon Keys"},
+    {"type": "mix", "number": 5, "name": "Mon Vox"},
+    {"type": "group", "number": 1, "name": "Drums"},
+    {"type": "group", "number": 2, "name": "Music"},
+    {"type": "group", "number": 3, "name": "Vocals"},
+    {"type": "lr", "number": 1, "name": "Main LR"}
+  ]
+}

@@ -1,0 +1,38 @@
+[project]
+name = "sq"
+version = "0.1.0"
+description = "Allen & Heath SQ show file creator"
+requires-python = ">=3.12"
+dependencies = [
+    "rich-click>=1.8",
+    "pydantic>=2.0",
+]
+
+[project.scripts]
+sq = "sq.cli:cli"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1",
+    "ruff>=0.9",
+]
+
+[tool.pyright]
+pythonVersion = "3.12"
+typeCheckingMode = "strict"
+venvPath = "."
+venv = ".venv"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sq"]
