@@ -6,7 +6,7 @@ from pydantic import field_validator
 from pydantic.dataclasses import dataclass
 
 ChannelType = Literal[
-    "input", "mix", "group", "fx_return", "fx_send", "matrix", "lr"
+    "input", "mix", "group", "fx_return", "fx_send", "lr", "matrix"
 ]
 
 CHANNEL_TYPE_LIMITS: dict[ChannelType, int] = {
@@ -15,8 +15,8 @@ CHANNEL_TYPE_LIMITS: dict[ChannelType, int] = {
     "group": 12,
     "fx_return": 8,
     "fx_send": 4,
-    "matrix": 3,
     "lr": 1,
+    "matrix": 3,
 }
 
 

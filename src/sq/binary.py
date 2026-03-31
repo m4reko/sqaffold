@@ -18,12 +18,12 @@ _NAME_FIELD_SIZE = 16
 # Block index where each channel type starts
 _CHANNEL_TYPE_BLOCK_START: dict[ChannelType, int] = {
     "input": 0,
-    "mix": 48,
-    "group": 60,
-    "fx_return": 72,
-    "fx_send": 80,
-    "matrix": 84,
-    "lr": 87,
+    "group": 72,
+    "fx_send": 84,
+    "mix": 88,
+    "fx_return": 100,
+    "lr": 104,
+    "matrix": 115,
 }
 
 # CRC32 lookup table (polynomial 0xEDB88320)

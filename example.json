@@ -24,6 +24,6 @@
     {"type": "group", "number": 1, "name": "Drums"},
     {"type": "group", "number": 2, "name": "Music"},
     {"type": "group", "number": 3, "name": "Vocals"},
-    {"type": "lr", "number": 1, "name": "MainLR"}
+    {"type": "lr", "number": 1, "name": "TestLR"}
   ]
 }
