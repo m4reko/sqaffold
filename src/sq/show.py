@@ -34,11 +34,14 @@ def create_show(
     if not show_dat_src.exists():
         raise FileNotFoundError(f"Template missing SHOW.DAT: {show_dat_src}")
 
-    # Copy entire template directory
-    shutil.copytree(template_path, output_path)
+    # Create full AHSQ folder structure
+    show_dir = output_path / "SHOWS" / "SHOW0000"
+    shutil.copytree(template_path, show_dir)
+    (output_path / "LIBRARY").mkdir(parents=True, exist_ok=True)
+    (output_path / "SCENES").mkdir(parents=True, exist_ok=True)
 
     # Patch NVDATA.DAT with channel names
-    nvdata_path = output_path / "NVDATA.DAT"
+    nvdata_path = show_dir / "NVDATA.DAT"
     nvdata = bytearray(nvdata_path.read_bytes())
 
     for ch in config.channels:
@@ -48,7 +51,7 @@ def create_show(
     nvdata_path.write_bytes(nvdata)
 
     # Patch SHOW.DAT with show name
-    show_dat_path = output_path / "SHOW.DAT"
+    show_dat_path = show_dir / "SHOW.DAT"
     show_dat = bytearray(show_dat_path.read_bytes())
     write_show_name(show_dat, config.show_name)
     show_dat_path.write_bytes(show_dat)

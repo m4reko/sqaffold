@@ -10,8 +10,8 @@ _SECTION_02_OFFSET = 0x370
 _SECTION_MARKER_SIZE = 4
 # Each channel strip block is 336 bytes
 _BLOCK_SIZE = 336
-# Channel name is at +0x04 within each block
-_NAME_OFFSET_IN_BLOCK = 0x04
+# Channel name is at the start of each block
+_NAME_OFFSET_IN_BLOCK = 0x00
 # Channel name field is 16 bytes (null-terminated ASCII)
 _NAME_FIELD_SIZE = 16
 
@@ -79,7 +79,7 @@ def write_channel_name(
 ) -> None:
     """Write a channel name into the NVDATA.DAT bytearray."""
     offset = channel_name_offset(channel_type, number)
-    encoded = name.encode("ascii")[:15]
+    encoded = name.encode("ascii")[:6]
     padded = encoded.ljust(_NAME_FIELD_SIZE, b"\x00")
     data[offset : offset + _NAME_FIELD_SIZE] = padded
 

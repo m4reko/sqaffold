@@ -30,8 +30,8 @@ class Channel:
     @classmethod
     def validate_name(cls, v: str) -> str:
         encoded = v.encode("ascii", errors="strict")
-        if len(encoded) > 15:
-            raise ValueError("Channel name must be max 15 ASCII characters")
+        if len(encoded) > 6:
+            raise ValueError("Channel name must be max 6 ASCII characters")
         return v
 
     @field_validator("number")
